@@ -1,0 +1,16 @@
+1.  Create a Kubernetes cluster
+   2.  Console: Search for Service Accounts
+   3.  Create a Service Account and give it Kubernetes Engine Admin Permission
+   4.  Crate JSON key, View
+   5.  Copy to new file in home dir (remember the file name)
+   6. Authenticate with GCP using the JSON file::  gcloud auth activate-service-account --key-file=/Users/mamunrashid/demo.json
+   7.  Set my project: gcloud config set project youtube-demo-1234567
+   8.  Post-check:  Am I on the right project: gcloud config list
+   9.  List clusters:  gcloud container clusters list
+   10. Post check: Who am I: gcloud config list account
+   11. Show list of accounts I have auth-ed with and make sure youtube is the current one: gcloud auth list  | grep youtube
+   12. Authenticate/connect-with the GKE cluster:  gcloud container clusters get-credentials $CLUSTER  --region $REGION --project youtube-demo-1234567
+           e.g. gcloud container clusters get-credentials cluster-1 --region=us-central1-c --project=youtube-demo-1234567
+            Ignore the plugin warning
+   13.   postcheck: kubectl config view | grep cluster-1
+                                kubectl get nodes
