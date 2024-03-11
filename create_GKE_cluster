@@ -1,0 +1,27 @@
+Create a GKE cluster (on Google Cloud)
+First, you need to create a Google Cloud account and follow these steps to install the client :
+
+brew install gcloud
+gcloud init
+
+# Also install the plugin to authenticate with GKE :
+gcloud components install gke-gcloud-auth-plugin
+
+Here are the commands to create the cluster :
+(Autopilot is easier to manage but VMs allow more configuration and reduce costs)
+# Option 1 : GKE on VMs :
+gcloud container clusters create gke1 \
+    --num-nodes=1 \
+    --zone europe-west1-b \  # Specify 1 zone to have only 1 node in total
+    --project=<myproject>
+
+
+# Option 2 : GKE with Autopilot :
+gcloud container clusters create-auto gke1 \
+    --region europe-west1 \
+    --project=<myproject>
+
+then delete it :
+gcloud container clusters delete gke1 \
+    --region europe-west1 [--zone europe-west1-b] \
+    --project=<myproject>
