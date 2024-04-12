@@ -4,6 +4,7 @@
    4.  Crate JSON key, View
    5.  Copy to new file in home dir (remember the file name)
    6. Authenticate with GCP using the JSON file::  gcloud auth activate-service-account --key-file=/Users/mamunrashid/demo.json
+gcloud auth activate-service-account chaku-827@gke-demo-416714.iam.gserviceaccount.com --key-file=gke-demo-416714-61a3ff3eaecb.json
    7.  Set my project: gcloud config set project youtube-demo-1234567
    8.  Post-check:  Am I on the right project: gcloud config list
    9.  List clusters:  gcloud container clusters list
