@@ -18,6 +18,14 @@ gcloud auth activate-service-account chaku-827@gke-demo-416714.iam.gserviceaccou
 
 
 
+To get invitation/
+https://console.cloud.google.com/invitation?project=[your-project-id]&account=[the-account-email-invited]&memberEmail=[the-account-email-invited]
+
+
+to login to cli
+
+gcloud auth login
+
 
 Dashboard:
 
